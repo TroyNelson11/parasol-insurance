@@ -43,17 +43,14 @@ image::04/replica-config.png[]
 
 == Sending Requests with Asyncio
 
-* After starting the 3-06 notebook, you can continue with the next instructions in order to watch your deployment autoscale.
-* The first time sending this many requests will fail, and the deployment will spin up more replicas.
-
+* Let's run our 3-06 notebook, you can continue with the next instructions in order to watch your deployment autoscale.
 - In your running workbench, `ignore the 03 folder`, navigate to the folder `parasol-insurance/lab-materials/04`.
 - Look for (and open) the notebook called `03-06-model-autoscaling.ipynb`.
-
-
+* The first time the notebook runs, it will fail. The deployment will then spin up more replicas and you can rerun the cells.
 
 == Monitoring your Deployments
 
-Once the post requests are made. The pod will begin working, but fails when it recieves too large of a workflow. To solve this, it spins up more deployments to handle the increased workload.
+Once the post requests are made. The single pod starts working, but ultimately fails because of too many requests at once. To solve this, the service automatically now spins up more deployments to handle the increased workload.
 
 * You can find the deployments spinning up inside of OpenShift at the Workloads-> Deployments tab.
 * In the searchbar, type in my-first-model to see all of the "predictor" pods that get spun up.
