@@ -1,0 +1,12 @@
+= Model Autoscaling
+include::_attributes.adoc[]
+
+. Let's see what happens when we send our model many requests at once.
+. We will setup another notebook...
+.. And use a library called Asyncio to let us send those requests.
+
+
+- In your running workbench, `ignore the 03 folder`, navigate to the folder `parasol-insurance/lab-materials/04`.
+- Look for (and open) the notebook called `03-06-model-autoscaling.ipynb`.
+- Execute the cells of the notebook, and ensure you understand what is happening.
+

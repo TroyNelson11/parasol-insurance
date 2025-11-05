@@ -144,13 +144,13 @@ We will now confirm that the model is indeed working by querying it!
 Once the model is served, we can use it as an endpoint that can be queried. We'll send a request to it, and get a result. And unlike our earlier notebook-based version, this applies to anyone working within our cluster. This could either be colleagues, or applications.
 
 * First, we need to get the URL of the model server.
-* To do this, click on the **Internal Service** link under the **Inference endpoint** column.
+* To do this, click on the **Internal and external endpoint details** link under the **Inference endpoint** column.
 * In the popup, you will see a few URLs for our model server.
 +
 [.bordershadow]
-image::04/inference-url.png[]
+image::04/inference-url-3.png[]
 
-* Note or copy the **RestUrl**, which should be something like `\https://my-first-model-{user}.apps.cluster-xxxxx.xxxxx.sandbox2331.opentlc.com`
+* Note or copy the **External** url, which should be something like `\https://my-first-model-{user}.apps.cluster-x4rsj.x4rsj.sandbox2796.opentlc.com`
 
 We will now use this URL to query the model.
 

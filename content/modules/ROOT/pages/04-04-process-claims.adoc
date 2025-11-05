@@ -98,20 +98,13 @@ Process Claim Run
 [.console-input]
 [source, text]
 [subs=attributes+]
-http://modelmesh-serving.{user}:8008
+https://my-first-model-{user}.apps.cluster-x4rsj.x4rsj.sandbox2796.opentlc.com
 
 This is the same route to the object detection endpoint that was used earlier in the workshop.
 
-* When done it should look something like this:
-+
-// [.bordershadow]
-image::05/05-run-settings-create-pipeline.png[run settings]
-image::05/05-run-settings-create-pipeline-2.png[run settings]
-
-
 * Note that by changing claim_id you can change which claim to process. We set it to 0 to process all unprocessed claims
 
-* Click **Create** and watch it run (it will take 5-15 seconds to start):
+* Click **Create** and watch it run (it will take a minute to start):
 +
 [.bordershadow]
 image::05/05-process-claims.png[process]
