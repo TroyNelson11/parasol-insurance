@@ -5,8 +5,59 @@ include::_attributes.adoc[]
 . We will setup another notebook...
 .. And use a library called Asyncio to let us send those requests.
 
+== Enabling Autoscaling inside of Openshift
+
+Once the model is served, we can find our InferenceService resource inside of openshift
+
+* First, we need to find the Home-> Search tab inside of openshift.
+* In the searchbar, you should type in InferenceService and select that resource item.
++
+[.bordershadow]
+image::04/search-inference-service.png[]
+
+* Inside of service, select the YAML tab to edit the number of replicas it's allowed to use.
+* Here is the information you will need to change:
+
+** spec-predictor-maxReplicas:
+[.lines_space]
+[.console-input]
+[source, text]
+[subs=attributes+]
+5
+** spec-predictor-minReplicas
+[.lines_space]
+[.console-input]
+[source, text]
+[subs=attributes+]
+1
+** spec-predictor-scaleTarget
+[.lines_space]
+[.console-input]
+[source, text]
+[subs=attributes+]
+3
+
++
+[.bordershadow]
+image::04/replica-config.png[]
+
+== Sending Requests with Asyncio
+
+* After starting the 3-06 notebook, you can continue with the next instructions in order to watch your deployment autoscale.
+* The first time sending this many requests will fail, and the deployment will spin up more replicas.
 
 - In your running workbench, `ignore the 03 folder`, navigate to the folder `parasol-insurance/lab-materials/04`.
 - Look for (and open) the notebook called `03-06-model-autoscaling.ipynb`.
-- Execute the cells of the notebook, and ensure you understand what is happening.
 
+
+
+== Monitoring your Deployments
+
+Once the post requests are made. The pod will begin working, but fails when it recieves too large of a workflow. To solve this, it spins up more deployments to handle the increased workload.
+
+* You can find the deployments spinning up inside of OpenShift at the Workloads-> Deployments tab.
+* In the searchbar, type in my-first-model to see all of the "predictor" pods that get spun up.
+* Once, you can see the deployments, rerun your jupyter notebook and it will succeed with the increased number of instances.
++
+[.bordershadow]
+image::04/monitor-deployments.png[]
