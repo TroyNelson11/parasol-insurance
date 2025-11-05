@@ -30,6 +30,12 @@ image::04/search-inference-service.png[]
 [source, text]
 [subs=attributes+]
 1
+** spec-predictor-scaleMetric
+[.lines_space]
+[.console-input]
+[source, text]
+[subs=attributes+]
+concurrency
 ** spec-predictor-scaleTarget
 [.lines_space]
 [.console-input]
